@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: larger;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #84c07c 0%, #555 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
+  gap: 0px;
+}
+
+/* Output is now outside the grid so it doesn't create an extra grid cell.
+   Style it to match visual expectations: placed above the grid and centered. */
+.output {
+  width: calc(100px * 4); /* match grid width */
+  max-width: 400px;
+  /* Use min-height so the output stays stable across content changes */
+  min-height: 106px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Keep numbers aligned to the bottom area of the output */
+  justify-content: flex-end;
+  /* increase bottom padding to add space between output and grid */
+  padding: 12px 12px 10px;
+  color: #111;
+  background-color: #555;
+  border: 1px solid #d1d1d1;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous-operand {
+  opacity: 0.75;
+  font-size: 18px;
+  min-height: 18px; /* ensure the previous row keeps space even if empty */
+}
+.current-operand {
+  font-size: 36px;
+  min-height: 36px; /* keep area visually consistent even when empty */
+}
+
+/* Small visuals for buttons to match screenshot look */
+.grid-container button {
+  background: #222;
+  color: #ddd;
+  border: 1px solid #d1d1d1;
+  font-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.grid-container button:hover {
+  background-color: #ddd;
+  color: #222;
+}
+
+.grid-container > .operator {
+  background-color: #ff9500;
+  color: white;
+}
+
+.grid-container > .span2 {
+  grid-column: span 2;
+}
