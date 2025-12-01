@@ -69,7 +69,7 @@ class Calculator {
         return;
     }
 
-    this.currentOperand = result;
+    this.currentOperand = result.toString();
     this.operator = undefined;
     this.previousOperand = "";
     this.updateDisplay();
@@ -103,7 +103,7 @@ class Calculator {
     if (this.previousOperand !== "") {
       this.calculate();
     }
-    this.currentOperand = this.currentOperand / 100;
+    this.currentOperand = (this.currentOperand / 100).toString();
     this.updateDisplay();
   }
 
@@ -161,3 +161,4 @@ equalsButton.addEventListener("click", () => {
 deleteButton.addEventListener("click", () => {
   calculator.delete();
 });
+
